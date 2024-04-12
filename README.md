@@ -8,4 +8,4 @@ This project aims to compare two different approaches for building a database in
 
 2. **Recursive Approach**: The recursive approach utilizes hierarchical or recursive data structures to model the inventory system, allowing for more flexible and dynamic organization of inventory items and their relationships.
 
-<img src="db_recursive/db_localizer_recursive.png" alt="Recursive Approach" width="300">
+![Recursive Approach](db_recursive/db_localizer_recursive.png)
