@@ -1,4 +1,5 @@
-SELECT CONCAT( r.Name, '/',
+SELECT 
+	CONCAT( r.Name, '/',
 	COALESCE(c.Name + '/',''),
 	COALESCE(l.Name + '/',''),
 	i.Name) AS LocationPath
