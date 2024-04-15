@@ -57,7 +57,26 @@ WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
 SELECT Name, LocationPath
 FROM ContainItem
 ```
-![Relational Approach](db_recursive/img/get_all_location_paths_i.png)
+**Query results:**
+
+|   |Name                   |LocationPath                                       |
+|---|-----------------------|---------------------------------------------------|
+|1  |Garage                 |Garage                                             |
+|2  |Pantry                 |Pantry                                             |
+|3  |Bedroom                |Bedroom                                            |
+|4  |Bed                    |Bedroom/Bed                                        |
+|5  |Cabinet                |Pantry/Cabinet                                     |
+|6  |Right Top Shelf        |Pantry/Cabinet/Right Top Shelf                     |
+|7  |Right Middle Shelf     |Pantry/Cabinet/Right Middle Shelf                  |
+|8  |Gloves                 |Pantry/Cabinet/Right Middle Shelf/Gloves           |
+|9  |Paper Towels           |Pantry/Cabinet/Right Top Shelf/Paper Towels        |
+|10 |Car                    |Garage/Car                                         |
+|11 |Bicycle                |Garage/Bicycle                                     |
+|12 |Tool Cabinet           |Garage/Tool Cabinet                                |
+|13 |Wardrobe               |Garage/Wardrobe                                    |
+|14 |Right Top Shelf        |Garage/Wardrobe/Right Top Shelf                    |
+|...|                       |                                                   |
+
 
 ```sql
 WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
