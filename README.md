@@ -63,3 +63,4 @@ WHERE NOT EXISTS (
     WHERE i.ContainerID = ci.ItemID
 );
 ```
+![Relational Approach](db_recursive/img/get_all_location_paths_ii.png)
