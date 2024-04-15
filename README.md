@@ -9,3 +9,8 @@ This project aims to compare two different approaches for building a database lo
 2. **Recursive Approach**: The recursive approach utilizes hierarchical or recursive data structures to model the localizer system, allowing for a more flexible and dynamic organization of locations of items and their relationships.
 
 ![Recursive Approach](db_recursive/db_localizer_recursive.png)
+
+## All Location Paths
+1.  **Relational Approach**:
+
+2. **Recursive Approach**:
