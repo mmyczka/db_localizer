@@ -3,6 +3,14 @@ Garage,Garage
 Pantry,Pantry
 Bedroom,Bedroom
 Bed,Bedroom/Bed
+Wardrobe,Bedroom/Wardrobe
+Right Top Shelf,Bedroom/Wardrobe/Right Top Shelf
+Right Bottom Shelf,Bedroom/Wardrobe/Right Bottom Shelf
+Left Top Shelf,Bedroom/Wardrobe/Left Top Shelf
+Bedding,Bedroom/Wardrobe/Left Top Shelf/Bedding
+Towels,Bedroom/Wardrobe/Left Top Shelf/Towels
+Book,Bedroom/Wardrobe/Right Bottom Shelf/Book
+Headache Pill,Bedroom/Wardrobe/Right Top Shelf/Headache Pill
 Cabinet,Pantry/Cabinet
 Right Top Shelf,Pantry/Cabinet/Right Top Shelf
 Right Middle Shelf,Pantry/Cabinet/Right Middle Shelf
@@ -11,14 +19,6 @@ Paper Towels,Pantry/Cabinet/Right Top Shelf/Paper Towels
 Car,Garage/Car
 Bicycle,Garage/Bicycle
 Tool Cabinet,Garage/Tool Cabinet
-Wardrobe,Garage/Wardrobe
-Right Top Shelf,Garage/Wardrobe/Right Top Shelf
-Right Bottom Shelf,Garage/Wardrobe/Right Bottom Shelf
-Left Top Shelf,Garage/Wardrobe/Left Top Shelf
-Bedding,Garage/Wardrobe/Left Top Shelf/Bedding
-Towels,Garage/Wardrobe/Left Top Shelf/Towels
-Book,Garage/Wardrobe/Right Bottom Shelf/Book
-Headache Pill,Garage/Wardrobe/Right Top Shelf/Headache Pill
 Top Shelf,Garage/Tool Cabinet/Top Shelf
 Bottom Shelf,Garage/Tool Cabinet/Bottom Shelf
 Sprayer,Garage/Tool Cabinet/Bottom Shelf/Sprayer
