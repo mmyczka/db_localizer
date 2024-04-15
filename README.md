@@ -11,7 +11,7 @@ This project aims to compare two different approaches for building a database lo
 ![Recursive Approach](db_recursive/db_localizer_recursive.png)
 
 ## All Location Paths
-1.  **Relational Approach**:
+1.  **Relational Approach**: This query retrieves the names of items and their complete location paths within the premises. It constructs the location path by concatenating the names of the room, container, and location of each item. If the container or location name has a NULL value, it is omitted from the path.
 ```sql
 SELECT i.Name,
 	CONCAT( r.Name, '/',
@@ -41,7 +41,7 @@ FROM Item i
 |12 |Bed                    |Bedroom/Bed                                        |
 
 
-2. **Recursive Approach**:
+2. **Recursive Approach**: This query also retrieves the names of items and their location paths but employs a recursive common table expression (CTE) to traverse the hierarchical structure of the items' locations. It starts with items with no containers (i.e., located directly in a room). Then, it recursively traverses through containers to build the complete location path for each item. The results include the location paths of the items and each container.
 ```sql
 WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
 (
@@ -77,6 +77,8 @@ FROM ContainItem
 |14 |Right Top Shelf        |Garage/Wardrobe/Right Top Shelf                    |
 |...|                       |                                                   |
 
+
+Adding a WHERE clause to filter out items that are not containers effectively limits the results to only the items themselves, excluding any containers from the output. This ensures that the query returns only the items stored at the lowest level of the hierarchy, rather than including intermediate containers.
 
 ```sql
 WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
