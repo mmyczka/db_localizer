@@ -9,6 +9,6 @@ WITH ItemContainer(Name, ItemID, ContainerID, LocationPath) AS
         INNER JOIN ItemContainer AS c
         ON i.ItemID = c.ContainerID
 )
-SELECT Name, LocationPath
+SELECT LocationPath
 FROM ItemContainer
 WHERE ContainerID IS NULL

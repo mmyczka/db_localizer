@@ -9,6 +9,6 @@ WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
         INNER JOIN ContainItem AS c
         ON i.ContainerID = c.ItemID
 )
-SELECT Name, LocationPath
+SELECT LocationPath
 FROM ContainItem
 WHERE Name='Towels'

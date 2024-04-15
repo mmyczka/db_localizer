@@ -116,3 +116,70 @@ WHERE NOT EXISTS (
 |10 |Sprayer                |Garage/Tool Cabinet/Bottom Shelf/Sprayer           |
 |11 |Hammer Drill           |Garage/Tool Cabinet/Top Shelf/Hammer Drill         |
 |12 |Electric Screwdriver   |Garage/Tool Cabinet/Top Shelf/Electric Screwdriver |
+
+
+## Item location
+
+1.  **Relational Approach**: 
+
+```sql
+SELECT CONCAT( r.Name, '/',
+	COALESCE(c.Name + '/',''),
+	COALESCE(l.Name + '/',''),
+	i.Name) AS LocationPath
+FROM Item i
+	JOIN Location l ON i.LocationID = l.LocationID
+	JOIN Container c ON l.ContainerID = c.ContainerID
+	JOIN Room r ON c.RoomID = r.RoomID
+WHERE i.Name = 'Towels';
+```
+**Query results:**
+```
+Bedroom/Wardrobe/Left Top Shelf/Towels
+```
+
+2. **Recursive Approach**:
+
+```sql
+WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
+(
+    SELECT Name, ItemID, ContainerID, CAST(Name AS NVARCHAR(MAX)) AS LocationPath
+    FROM Item 
+    WHERE ContainerID IS NULL
+    UNION ALL
+    SELECT i.Name, i.ItemID, i.ContainerID, c.LocationPath + '/' + CAST(i.Name AS NVARCHAR(MAX))
+    FROM Item i
+        INNER JOIN ContainItem AS c
+        ON i.ContainerID = c.ItemID
+)
+SELECT Name, LocationPath
+FROM ContainItem
+WHERE Name='Towels'
+```
+**Query results:**
+
+```
+Bedroom/Wardrobe/Left Top Shelf/Towels
+```
+
+```sql
+WITH ItemContainer(Name, ItemID, ContainerID, LocationPath) AS
+(
+    SELECT Name, ItemID, ContainerID, CAST(Name AS NVARCHAR(MAX)) AS LocationPath
+    FROM Item 
+    WHERE Name = 'Towels'
+    UNION ALL
+    SELECT i.Name, i.ItemID, i.ContainerID, CAST(i.Name AS NVARCHAR(MAX)) + '/' + c.LocationPath
+    FROM Item i
+        INNER JOIN ItemContainer AS c
+        ON i.ItemID = c.ContainerID
+)
+SELECT Name, LocationPath
+FROM ItemContainer
+WHERE ContainerID IS NULL
+```
+**Query results:**
+
+```
+Bedroom/Wardrobe/Left Top Shelf/Towels
+```
