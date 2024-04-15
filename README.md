@@ -23,7 +23,23 @@ FROM Item i
 	JOIN Container c ON l.ContainerID = c.ContainerID
 	JOIN Room r ON c.RoomID = r.RoomID
 ```
-![Relational Approach](db_relational/img/get_all_location_paths.png)
+**Query results:**
+
+|   |Name                   |LocationPath                                       |
+|---|-----------------------|---------------------------------------------------|
+|1  |Car                    |Garage/Car                                         |
+|2  |Bicycle                |Garage/Bicycle                                     |
+|3  |Hammer drill           |Garage/Tool Cabinet/Top Shelf/Hammer drill         |
+|4  |Electric Screwdriver   |Garage/Tool Cabinet/Top Shelf/Electric Screwdriver |
+|5  |Sprayer                |Garage/Tool Cabinet/Bottom Shelf/Sprayer           |
+|6  |Paper Towels           |Pantry/Cabinet/Right Top Shelf/Paper Towels        |
+|7  |Gloves                 |Pantry/Cabinet/Right Middle Shelf/Gloves           |
+|8  |Headache Pill          |Bedroom/Wardrobe/Right Top Shelf/Headache Pill     |
+|9  |Books                  |Bedroom/Wardrobe/Right Top Shelf/Books             |
+|10 |Bedding                |Bedroom/Wardrobe/Left Top Shelf/Bedding            |
+|11 |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
+|12 |Bed                    |Bedroom/Bed                                        |
+
 
 2. **Recursive Approach**:
 ```sql

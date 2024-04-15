@@ -1,0 +1,13 @@
+Name,LocationPath
+Car,Garage/Car
+Bicycle,Garage/Bicycle
+Hammer drill,Garage/Tool Cabinet/Top Shelf/Hammer drill
+Electric Screwdriver,Garage/Tool Cabinet/Top Shelf/Electric Screwdriver
+Sprayer,Garage/Tool Cabinet/Bottom Shelf/Sprayer
+Paper Towels,Pantry/Cabinet/Right Top Shelf/Paper Towels
+Gloves,Pantry/Cabinet/Right Middle Shelf/Gloves
+Headache Pill,Bedroom/Wardrobe/Right Top Shelf/Headache Pill
+Books,Bedroom/Wardrobe/Right Top Shelf/Books
+Bedding,Bedroom/Wardrobe/Left Top Shelf/Bedding
+Towels,Bedroom/Wardrobe/Left Top Shelf/Towels
+Bed,Bedroom/Bed
