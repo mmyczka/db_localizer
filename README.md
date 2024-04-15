@@ -13,7 +13,7 @@ This project aims to compare two different approaches for building a database lo
 ## All Location Paths
 1.  **Relational Approach**:
 ```sql
-SELECT 
+SELECT i.Name,
 	CONCAT( r.Name, '/',
 	COALESCE(c.Name + '/',''),
 	COALESCE(l.Name + '/',''),
