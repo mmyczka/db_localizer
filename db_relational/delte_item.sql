@@ -1,0 +1,2 @@
+DELETE Item 
+WHERE ItemID = 13;
