@@ -1,4 +1,4 @@
-SELECT 
+SELECT i.Name,
 	CONCAT( r.Name, '/',
 	COALESCE(c.Name + '/',''),
 	COALESCE(l.Name + '/',''),
