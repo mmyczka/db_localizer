@@ -98,4 +98,19 @@ WHERE NOT EXISTS (
     WHERE i.ContainerID = ci.ItemID
 );
 ```
-![Relational Approach](db_recursive/img/get_all_location_paths_ii.png)
+**Query results:**
+
+|   |Name                   |LocationPath                                       |
+|---|-----------------------|---------------------------------------------------|
+|1  |Bed                    |Bedroom/Bed                                        |
+|2  |Gloves                 |Pantry/Cabinet/Right Middle Shelf/Gloves           |
+|3  |Paper Towels           |Pantry/Cabinet/Right Top Shelf/Paper Towels        |
+|4  |Car                    |Garage/Car                                         |
+|5  |Bicycle                |Garage/Bicycle                                     |
+|6  |Bedding                |Garage/Wardrobe/Left Top Shelf/Bedding             |
+|7  |Towels                 |Garage/Wardrobe/Left Top Shelf/Towels              |
+|8  |Book                   |Garage/Wardrobe/Right Bottom Shelf/Book            |
+|9  |Headache Pill          |Garage/Wardrobe/Right Top Shelf/Headache Pill      |
+|10 |Sprayer                |Garage/Tool Cabinet/Bottom Shelf/Sprayer           |
+|11 |Hammer Drill           |Garage/Tool Cabinet/Top Shelf/Hammer Drill         |
+|12 |Electric Screwdriver   |Garage/Tool Cabinet/Top Shelf/Electric Screwdriver |
