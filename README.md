@@ -14,14 +14,14 @@ This project aims to compare two different approaches for building a database lo
 1.  **Relational Approach**: This query retrieves the names of items and their complete location paths within the premises. It constructs the location path by concatenating the names of the room, container, and location of each item. If the container or location name has a NULL value, it is omitted from the path.
 ```sql
 SELECT i.Name,
-	CONCAT( r.Name, '/',
-	COALESCE(c.Name + '/',''),
-	COALESCE(l.Name + '/',''),
-	i.Name) AS LocationPath
+    CONCAT( r.Name, '/',
+    COALESCE(c.Name + '/',''),
+    COALESCE(l.Name + '/',''),
+    i.Name) AS LocationPath
 FROM Item i
-	JOIN Location l ON i.LocationID = l.LocationID
-	JOIN Container c ON l.ContainerID = c.ContainerID
-	JOIN Room r ON c.RoomID = r.RoomID
+    JOIN Location l ON i.LocationID = l.LocationID
+    JOIN Container c ON l.ContainerID = c.ContainerID
+    JOIN Room r ON c.RoomID = r.RoomID
 ```
 **Query results:**
 
@@ -125,13 +125,13 @@ WHERE NOT EXISTS (
 ```sql
 SELECT i.Name, 
     CONCAT( r.Name, '/',
-	COALESCE(c.Name + '/',''),
-	COALESCE(l.Name + '/',''),
-	i.Name) AS LocationPath
+    COALESCE(c.Name + '/',''),
+    COALESCE(l.Name + '/',''),
+    i.Name) AS LocationPath
 FROM Item i
-	JOIN Location l ON i.LocationID = l.LocationID
-	JOIN Container c ON l.ContainerID = c.ContainerID
-	JOIN Room r ON c.RoomID = r.RoomID
+    JOIN Location l ON i.LocationID = l.LocationID
+    JOIN Container c ON l.ContainerID = c.ContainerID
+    JOIN Room r ON c.RoomID = r.RoomID
 WHERE i.Name = 'Towels';
 ```
 **Query result:**
