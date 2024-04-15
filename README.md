@@ -123,7 +123,8 @@ WHERE NOT EXISTS (
 1.  **Relational Approach**: 
 
 ```sql
-SELECT CONCAT( r.Name, '/',
+SELECT i.Name, 
+    CONCAT( r.Name, '/',
 	COALESCE(c.Name + '/',''),
 	COALESCE(l.Name + '/',''),
 	i.Name) AS LocationPath
@@ -133,10 +134,11 @@ FROM Item i
 	JOIN Room r ON c.RoomID = r.RoomID
 WHERE i.Name = 'Towels';
 ```
-**Query results:**
-```
-Bedroom/Wardrobe/Left Top Shelf/Towels
-```
+**Query result:**
+
+|   |Name                   |LocationPath                                       |
+|---|-----------------------|---------------------------------------------------|
+|1  |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
 
 2. **Recursive Approach**:
 
@@ -156,11 +158,11 @@ SELECT Name, LocationPath
 FROM ContainItem
 WHERE Name='Towels'
 ```
-**Query results:**
+**Query result:**
 
-```
-Bedroom/Wardrobe/Left Top Shelf/Towels
-```
+|   |Name                   |LocationPath                                       |
+|---|-----------------------|---------------------------------------------------|
+|1  |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
 
 ```sql
 WITH ItemContainer(Name, ItemID, ContainerID, LocationPath) AS
@@ -178,8 +180,7 @@ SELECT Name, LocationPath
 FROM ItemContainer
 WHERE ContainerID IS NULL
 ```
-**Query results:**
-
-```
-Bedroom/Wardrobe/Left Top Shelf/Towels
-```
+**Query result:**
+|   |Name                   |LocationPath                                       |
+|---|-----------------------|---------------------------------------------------|
+|1  |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
