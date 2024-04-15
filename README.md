@@ -41,6 +41,8 @@ WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
 SELECT Name, LocationPath
 FROM ContainItem
 ```
+![Relational Approach](db_recursive/img/get_all_location_paths_i.png)
+
 ```sql
 WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
 (
