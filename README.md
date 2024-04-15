@@ -23,6 +23,7 @@ FROM Item i
 	JOIN Container c ON l.ContainerID = c.ContainerID
 	JOIN Room r ON c.RoomID = r.RoomID
 ```
+![Relational Approach](db_relational/img/get_all_location_paths.png)
 
 2. **Recursive Approach**:
 ```sql
