@@ -140,7 +140,7 @@ WHERE i.Name = 'Towels';
 |---|-----------------------|---------------------------------------------------|
 |1  |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
 
-2. **Recursive Approach**: A similar approach is used here, which only adds a condition WHERE Name = 'Towels' to the query for All Location Paths. Although it gives us a correct location, this approach could be more optimal because it requires generating all possible paths and than selecting only one. 
+2. **Recursive Approach**: A similar approach is used here, which only adds a condition ```WHERE Name = 'Towels'``` to the query for All Location Paths. Although it gives us a correct location, this approach could be more optimal because it requires generating all possible paths and than selecting only one. 
 
 ```sql
 WITH ContainItem(Name, ItemID, ContainerID, LocationPath) AS
@@ -164,7 +164,7 @@ WHERE Name='Towels'
 |---|-----------------------|---------------------------------------------------|
 |1  |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
 
-A better approach is when we initiate the search for the location path from the item itself, traversing backward through its containers in the hierarchy until reaching the top-level container. Here, we avoid generating all possible paths; instead, we only retrieve paths relevant to the item being searched for. At the end, we need to add the condition 'WHERE ContainerID IS NULL' to receive only the full path.
+A better approach is when we initiate the search for the location path from the item itself, traversing backward through its containers in the hierarchy until reaching the top-level container. Here, we avoid generating all possible paths; instead, we only retrieve paths relevant to the item being searched for. At the end, we need to add the condition ```'WHERE ContainerID IS NULL'``` to receive only the full path.
 
 ```sql
 WITH ItemContainer(Name, ItemID, ContainerID, LocationPath) AS
