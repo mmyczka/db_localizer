@@ -222,3 +222,19 @@ UPDATE Item
 SET ContainerID = 14
 WHERE ItemID = 15;
 ```
+
+**3. Delete:** In both approaches, the deletion of an item looks the same.
+
+**Relational Approach**:
+
+```sql
+DELETE Item 
+WHERE ItemID = 13;
+```
+
+**Recursive Approach**:
+
+```sql
+DELETE Item 
+WHERE ItemID = 29;
+```
