@@ -164,7 +164,7 @@ WHERE Name='Towels'
 |---|-----------------------|---------------------------------------------------|
 |1  |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
 
-A better approach is when we initiate the search for the location path from the item itself, traversing backward through its containers in the hierarchy until reaching the top-level container. Here, we avoid generating all possible paths; instead, we only retrieve paths relevant to the item being searched for. At the end, we need to add the condition ```'WHERE ContainerID IS NULL'``` to receive only the full path.
+A better approach is when we initiate the search for the location path from the item itself, traversing backward through its containers in the hierarchy until reaching the top-level container. Here, we avoid generating all possible paths; instead, we only retrieve paths relevant to the item being searched for. At the end, we need to add the condition ```WHERE ContainerID IS NULL``` to receive only the full path.
 
 ```sql
 WITH ItemContainer(Name, ItemID, ContainerID, LocationPath) AS
@@ -186,3 +186,21 @@ WHERE ContainerID IS NULL
 |   |Name                   |LocationPath                                       |
 |---|-----------------------|---------------------------------------------------|
 |1  |Towels                 |Bedroom/Wardrobe/Left Top Shelf/Towels             |
+
+## Insert / Move / Delete
+
+**1. Insert:** Both queries for relational and recursive approaches are similar. It is just a basic ```INSERT INTO``` command.
+
+**Relational Approach**:
+
+```sql
+INSERT INTO Item(Name, LocationID, CategoryID) 
+VALUES ('Drill', 3, 3)
+```
+
+**Recursive Approach**:
+
+```sql
+INSERT INTO Item(Name, ContainerID, CategoryID)
+VALUES ('Drill', 5, 5)
+```
