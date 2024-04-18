@@ -204,3 +204,21 @@ VALUES ('Drill', 3, 3)
 INSERT INTO Item(Name, ContainerID, CategoryID)
 VALUES ('Drill', 5, 5)
 ```
+
+**2. Move:** Here, we have a similar situation. It is just a basic UPDATE command. For a recursive approach, we can also move a container in the same way. For a relational approach, we have to update different tables (location, container, room) to move a container.
+
+**Relational Approach**:
+
+```sql
+UPDATE Item 
+SET LocationID = 6
+WHERE ItemID = 7;
+```
+
+**Recursive Approach**:
+
+```sql
+UPDATE Item 
+SET ContainerID = 14
+WHERE ItemID = 15;
+```
