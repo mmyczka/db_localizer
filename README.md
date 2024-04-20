@@ -243,8 +243,8 @@ WHERE ItemID = 29;
 
 |Relational Approach|Recursive Approach|
 |-------------------|------------------|
-| Pros:                                |
+| Pros:             | Pros:            |
 |- Follows traditional database principles. Clear, structured tables and relationships.|- Allows for dynamic organization of hierarchical data. Offers flexibility in modeling complex relationships.|
 | - Simple SQL queries for path construction. Easy to understand and implement.|- Potential for optimization by refining recursive queries and traversal techniques.|
-| Cons:                                |
+| Cons:             | Cons:            |
 |- Limited flexibility in representing hierarchical data. Complexity increases with deeper hierarchies.|- More complex queries for item location. Potential risk of entering a recursive loop.|
