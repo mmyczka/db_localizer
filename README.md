@@ -248,3 +248,6 @@ WHERE ItemID = 29;
 | - Simple SQL queries for path construction. Easy to understand and implement.|- Potential for optimization by refining recursive queries and traversal techniques.|
 | Cons:             | Cons:            |
 |- Limited flexibility in representing hierarchical data. Complexity increases with deeper hierarchies.|- More complex queries for item location. Potential risk of entering a recursive loop.|
+
+## Take into Consideration
+For further analysis, ```hierarchyid``` can be considered. The ```hierarchyid``` is a data type introduced in SQL Server for efficiently representing hierarchical data. It's designed specifically for managing hierarchical structures such as organizational charts, file systems, or product categories.
